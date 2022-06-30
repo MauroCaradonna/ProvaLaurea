@@ -782,4 +782,8 @@ public class Model {
 		return simulator.getSaleDate().toString();
 	}
 
+	public List<String> getAllBom() {
+		return dao.getAllBom();
+	}
+
 }

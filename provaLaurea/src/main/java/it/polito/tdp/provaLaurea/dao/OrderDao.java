@@ -202,4 +202,26 @@ public class OrderDao {
 		
 	}
 
+	public List<String> getAllBom() {
+		String sql = "SELECT itemId "
+				   + "FROM bom";
+		//buyerMap = new HashMap<String, Buyer>();
+		List<String> result = new ArrayList<String>();
+		try {
+			Connection conn = ConnectDB.getConnection();
+			PreparedStatement st = conn.prepareStatement(sql);
+			ResultSet res = st.executeQuery();
+
+			while (res.next()) {
+				String itemId = res.getString("itemId");
+				result.add(itemId);
+			}
+
+			conn.close();
+			return result;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 }

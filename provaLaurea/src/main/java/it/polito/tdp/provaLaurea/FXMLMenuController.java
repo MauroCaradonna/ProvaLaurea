@@ -70,7 +70,7 @@ public class FXMLMenuController {
     void handleGoSimulator(ActionEvent event) {
     	try {
 	    	System.out.println("Apri Simulator Scene");
-	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/SimulatorScene.fxml"));
+	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/SimulatorScene1.fxml"));
 			Parent root = loader.load();
 			
 			Scene scene = new Scene(root);
